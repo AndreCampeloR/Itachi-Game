@@ -7,7 +7,7 @@
 .game-board {
   width: 100%;
   border-bottom: solid 15px rgba(116, 114, 114, 0.8823529412);
-  height: 500px;
+  height: 50vh;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -32,6 +32,29 @@
 
 .pulo {
   animation: pulo 500ms ease-out;
+}
+
+.pontuacao {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 60%;
+  background-color: red;
+}
+.pontuacao-titulo, .pontuacao-timer {
+  font-size: 2rem;
+  font-family: "Sono";
+}
+
+.info-board {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  background-color: blue;
+  height: 50vh;
 }
 
 @keyframes parede-animation {

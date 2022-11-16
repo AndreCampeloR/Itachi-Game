@@ -1,3 +1,29 @@
+// let timer;
+// function startTimer(duration, display) {
+//      timer = duration;
+//     setInterval(function () {
+//         display.textContent = timer;
+//         if (++timer < 0) {
+//             timer = duration;
+//         } 
+//     }, 100);
+// }
+//  (function pontuacao () {
+//     var duration = 0 ; 
+//         display = document.querySelector('.timer'); // selecionando o timer
+//     startTimer(duration, display); // iniciando o timer
+// })();
+let timer = 0;
+let display = document.querySelector('.pontuacao-timer'); // selecionando o timer
+let id = null;
+window.onload = function() {
+    if(!id) {
+      id = setInterval(function () {
+        display.textContent = timer++;
+      }, 100);    
+    }
+  }  
+
 const itachi = document.querySelector('.game-board-itachi');
 const parede = document.querySelector('.game-board-parede');
 const nuvens = document.querySelector('.game-board-nuvens');
@@ -13,6 +39,7 @@ const loop = setInterval(() => {
     const paredePosition = parede.offsetLeft;
     const nuvensPosition = nuvens.offsetLeft;
     const itachiPosition = +window.getComputedStyle(itachi).bottom.replace('px', '');
+ 
 
 
     if (paredePosition <= 80 && paredePosition > 0 && itachiPosition < 100) {
@@ -27,8 +54,9 @@ const loop = setInterval(() => {
 
         itachi.src = './img/itachi.gif';
         itachi.style.width = '90px';
-        itachi.style.left = '15px'; 
+        itachi.style.left = '15px';
 
+        clearInterval(id);
         clearInterval(loop);
     }
 }, 10);
