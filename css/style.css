@@ -7,7 +7,7 @@
 .game-board {
   width: 100%;
   border-bottom: solid 15px rgba(116, 114, 114, 0.8823529412);
-  height: 50vh;
+  height: 70vh;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -17,7 +17,7 @@
   position: absolute;
   bottom: 0;
   width: 80px;
-  animation: parede-animation 1.5s infinite linear;
+  animation: parede-animation 2s infinite linear;
 }
 .game-board-itachi {
   position: absolute;
@@ -28,6 +28,23 @@
   width: 550px;
   position: absolute;
   animation: nuvens-animation 10s infinite linear;
+}
+.game-board-olhos {
+  position: absolute;
+  left: 37vw;
+  width: 350px;
+  margin: 100px auto;
+  display: none;
+}
+.game-board-gameover {
+  width: 250px;
+  position: absolute;
+  left: 40vw;
+  bottom: 30vh;
+  border-radius: 10px;
+  height: 50px;
+  display: none;
+  background-color: #a00d0d;
 }
 
 .pulo {
@@ -41,7 +58,7 @@
   flex-direction: column;
   width: 20%;
   height: 60%;
-  background-color: red;
+  background-color: #850808;
 }
 .pontuacao-titulo, .pontuacao-timer {
   font-size: 2rem;
@@ -53,8 +70,8 @@
   align-items: center;
   display: flex;
   width: 100%;
-  background-color: blue;
-  height: 50vh;
+  background-color: black;
+  height: 30vh;
 }
 
 @keyframes parede-animation {
