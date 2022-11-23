@@ -80,6 +80,7 @@ const parede = document.querySelector('.game-board-parede');
     
     
     document.addEventListener('keydown', pulo);
+    document.addEventListener('click', pulo);
     gameover.addEventListener('click', function(){
                 window.location.reload(true);
             })
