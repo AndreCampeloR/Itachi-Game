@@ -1,8 +1,9 @@
 const gameover = document.querySelector('.game-board-gameover');
 const itachi = document.querySelector('.game-board-itachi');
 const parede = document.querySelector('.game-board-parede');
-  const nuvens = document.querySelector('.game-board-nuvens');
-  const olhos = document.querySelector('.game-board-olhos');
+const nuvens = document.querySelector('.game-board-nuvens');
+const olhos = document.querySelector('.game-board-olhos');
+const maiorPontuacao = document.querySelector('.record-timer')
   
   
   
@@ -53,6 +54,8 @@ const parede = document.querySelector('.game-board-parede');
         const paredePosition = parede.offsetLeft;
         const nuvensPosition = nuvens.offsetLeft;
         const itachiPosition = +window.getComputedStyle(itachi).bottom.replace('px', '');
+        let record = timer
+        maiorPontuacao.textContent = record
         
         
         
@@ -70,6 +73,7 @@ const parede = document.querySelector('.game-board-parede');
             itachi.style.width = '90px';
             itachi.style.left = '15px';
             
+
             clearInterval(id);
             clearInterval(loop);
             olhos.style.display = 'block' ;
@@ -82,7 +86,7 @@ const parede = document.querySelector('.game-board-parede');
     document.addEventListener('keydown', pulo);
     document.addEventListener('click', pulo);
     gameover.addEventListener('click', function(){
-                window.location.reload(true);
+                window.location.reload(true)
             })
         
     

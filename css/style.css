@@ -45,6 +45,8 @@
   height: 50px;
   display: none;
   background-color: #a00d0d;
+  font-family: "Sono";
+  font-size: 1.2rem;
 }
 
 .pulo {
@@ -59,6 +61,8 @@
   width: 20%;
   height: 60%;
   background-color: #850808;
+  border-radius: 5px;
+  margin: auto 0 auto auto;
 }
 .pontuacao-titulo, .pontuacao-timer {
   font-size: 2rem;
@@ -66,12 +70,28 @@
 }
 
 .info-board {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #000;
+  height: 30vh;
+}
+
+.record {
   justify-content: center;
   align-items: center;
   display: flex;
-  width: 100%;
-  background-color: black;
-  height: 30vh;
+  flex-direction: column;
+  width: 30%;
+  height: 85%;
+  margin: 15px 15px 0 0;
+  background-color: rgba(133, 8, 8, 0.5568627451);
+  border-radius: 5px;
+  margin-left: auto;
+}
+.record-titulo {
+  font-size: 2rem;
+  font-family: "Sono";
 }
 
 @keyframes parede-animation {

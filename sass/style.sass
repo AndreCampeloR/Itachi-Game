@@ -61,16 +61,34 @@
     height: 60%
     background-color: #850808
     border-radius: 5px
+    margin: auto 0 auto auto
         
     &-titulo,&-timer
         font-size: 2.0rem
         font-family: 'Sono'
 
 .info-board
-    @include mixins.center
+    display: flex
+    justify-content: center
     width: 100%
     background-color: #000
     height: 30vh
+
+.record
+    @include mixins.center
+    flex-direction: column
+    width: 30%
+    height: 85%
+    margin: 15px 15px 0 0
+    background-color: #8508088e
+    border-radius: 5px 
+    margin-left: auto
+
+    &-titulo 
+        font-size: 2.0rem
+        font-family: 'Sono'
+        
+
 
 @keyframes parede-animation 
     from
