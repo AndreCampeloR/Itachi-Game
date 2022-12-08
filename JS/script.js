@@ -50,25 +50,13 @@ const maiorPontuacao = document.querySelector('.record-timer')
         }, 500);
     };
     
+    let pontuacao
     const loop = setInterval(() => {
         const paredePosition = parede.offsetLeft;
         const nuvensPosition = nuvens.offsetLeft;
         const itachiPosition = +window.getComputedStyle(itachi).bottom.replace('px', '');
 
-        function Maiorpontuacao(){
-            let pontuacao = timer
-            maiorPontuacao.textContent = pontuacao
-            localStorage.setItem('record', pontuacao);
-            let record = localStorage.getItem('record');
-            maiorPontuacao.textContent = record -1
-            console.log(record)
-            if(pontuacao > record){
-            }
-            
-        }
         
-        
-
         
         if (paredePosition <= 80 && paredePosition > 0 && itachiPosition < 100) {
             parede.style.animation = 'none';
@@ -83,23 +71,29 @@ const maiorPontuacao = document.querySelector('.record-timer')
             itachi.src = './img/itachi.gif';
             itachi.style.width = '90px';
             itachi.style.left = '15px';
-
- 
+            
+            pontuacao = timer 
+            localStorage.setItem('record', pontuacao);
+            
             clearInterval(id);
             clearInterval(loop);
             olhos.style.display = 'block' ;
             setTimeout(function(){
-            gameover.style.display = 'block'}, 2000)
-        } 
-    }, 10);
-    
-    
+                gameover.style.display = 'block'}, 2000)
+            } 
+        }, 10);
+        
+        let record = localStorage.getItem('record');
+        
     document.addEventListener('keydown', pulo);
     document.addEventListener('click', pulo);
     gameover.addEventListener('click', function(){
-                window.location.reload(true)
-            })
-            
-            
+        window.location.reload(true)
+        maiorPontu()
+    })
     
-            
+    function maiorPontu(){
+        maiorPontuacao.textContent = record
+    }
+   
+    
