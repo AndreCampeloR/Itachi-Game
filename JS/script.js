@@ -54,10 +54,21 @@ const maiorPontuacao = document.querySelector('.record-timer')
         const paredePosition = parede.offsetLeft;
         const nuvensPosition = nuvens.offsetLeft;
         const itachiPosition = +window.getComputedStyle(itachi).bottom.replace('px', '');
-        let record = timer
-        maiorPontuacao.textContent = record
+
+        function Maiorpontuacao(){
+            let pontuacao = timer
+            maiorPontuacao.textContent = pontuacao
+            localStorage.setItem('record', pontuacao);
+            let record = localStorage.getItem('record');
+            maiorPontuacao.textContent = record -1
+            console.log(record)
+            if(pontuacao > record){
+            }
+            
+        }
         
         
+
         
         if (paredePosition <= 80 && paredePosition > 0 && itachiPosition < 100) {
             parede.style.animation = 'none';
@@ -72,8 +83,8 @@ const maiorPontuacao = document.querySelector('.record-timer')
             itachi.src = './img/itachi.gif';
             itachi.style.width = '90px';
             itachi.style.left = '15px';
-            
 
+ 
             clearInterval(id);
             clearInterval(loop);
             olhos.style.display = 'block' ;
@@ -88,7 +99,7 @@ const maiorPontuacao = document.querySelector('.record-timer')
     gameover.addEventListener('click', function(){
                 window.location.reload(true)
             })
-        
+            
+            
     
-    
-    
+            
