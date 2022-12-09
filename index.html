@@ -12,10 +12,17 @@
     <script defer src="./JS/script.js"></script>
     <title>Itachi Game</title>
 </head>
-<body>
+<body class="body">
     <div class="game-board">
         <img src="img/painelNuvens.png" class="game-board-nuvens">
         <img src="img/itachiOlhos.png" class="game-board-olhos">
+        <div class="divForm">
+            <form action="POST" class="divForm-form">
+                <input type="text" placeholder="Coloque seu nome" class="divForm-form-input">
+                <button type="submit" class="divForm-form-btn">Enviar</button>
+            </form>
+        </div>
+        <button type="button" class="game-board-startgame">Jogar</button>
         <button type="button" class="game-board-gameover">Ativar Izanagi</button>
         <img src="img/itachi_running.gif" class="game-board-itachi">
         <img src="img/parede.png" class="game-board-parede">

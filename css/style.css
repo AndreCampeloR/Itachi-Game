@@ -48,6 +48,36 @@
   font-family: "Sono";
   font-size: 1.2rem;
 }
+.game-board-startgame {
+  width: 250px;
+  position: absolute;
+  left: 40vw;
+  bottom: 30vh;
+  border-radius: 10px;
+  height: 50px;
+  display: block;
+  background-color: #a00d0d;
+  font-family: "Sono";
+  font-size: 1.2rem;
+}
+
+.divForm {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  margin: 200px;
+  width: 30%;
+  height: 50%;
+  background-color: #000;
+}
+.divForm-form {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
 
 .pulo {
   animation: pulo 500ms ease-out;
