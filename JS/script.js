@@ -11,7 +11,7 @@ const divForm = document.querySelector('.divForm');
 const desfoque = document.querySelector('.desfoque');
 
 let jogador
-let r = /^(?=.*[a-z])[a-z]{4,}/
+let r = /^(?=.*[a-z])[a-z]{2,}/
 
 
  $(NomeInicio).keypress(function() {
@@ -26,11 +26,14 @@ let r = /^(?=.*[a-z])[a-z]{4,}/
     }  else { erro();
     }});
     jogarForm.addEventListener('click', ()=>{
-        jogador = NomeInicio.value
-        alert(`Bom Jogo ${jogador}`);
-        console.log(jogador)
-        desfoque.style.display = 'none';
-        divForm.style.display = 'none'
+        if(NomeInicio.value == ''){
+            alert("Escreva seu nome para continuar")
+        } else{
+            jogador = NomeInicio.value
+            alert(`Bom Jogo ${jogador}`);
+            desfoque.style.display = 'none';
+            divForm.style.display = 'none'
+        }
     })
 
     function erro(){
@@ -65,12 +68,13 @@ let timer = 0;
 let display = document.querySelector('.pontuacao-timer'); // selecionando o timer
 let id = null;
 let pontuacao
+let recomecar = false
 
-
-
-startgame.addEventListener('click', function iniciar() {
-    startgame.style.display = 'none';
-    if(!id) {
+do {
+    
+    startgame.addEventListener('click', ()=> {
+        startgame.style.display = 'none';
+        if(!id) {
         id = setInterval(function () {
             display.textContent = timer++;
             if(timer >= 80 && timer <90){
@@ -91,16 +95,16 @@ startgame.addEventListener('click', function iniciar() {
             if(timer >= 480 && timer <= 490){
                 olhos.style.display = 'block'
             }
-                
+            
             if(timer >= 491){
-                 parede.style.animation = 'parede-animation 0.8s infinite linear';
-                 olhos.style.display = 'none' ;
+                parede.style.animation = 'parede-animation 0.8s infinite linear';
+                olhos.style.display = 'none' ;
             }
             }, 
             100);    
         } 
-        
-            setInterval(() => {
+
+        setInterval(() => {
             const paredePosition = parede.offsetLeft;
             const nuvensPosition = nuvens.offsetLeft;
             const itachiPosition = +window.getComputedStyle(itachi).bottom.replace('px', '');
@@ -128,16 +132,23 @@ startgame.addEventListener('click', function iniciar() {
                 clearInterval(id);
                 olhos.style.display = 'block' ;
                 setTimeout(function(){
-                    gameover.style.display = 'block'}, 2000)
+                    startgame.innerHTML = "Ativar Izanagi"
+                    startgame.style.display = 'block'}, 2000)
+                   
+                    
+                    
                 } 
             }, 10);
-            
-            gameover.addEventListener('click', function(){
-                
-                iniciar()
         })
-        }  )
-        
+        // recomecar = true
+        startgame.addEventListener('click', ()=>{
+            recomecar = false
+            console.log(recomecar)
+    })
+    } while (recomecar == true);
+    
+    
+
         const pulo = ()=>{
             itachi.classList.add('pulo');
             setTimeout(() => {
