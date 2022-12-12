@@ -5,7 +5,60 @@ const parede = document.querySelector('.game-board-parede');
 const nuvens = document.querySelector('.game-board-nuvens');
 const olhos = document.querySelector('.game-board-olhos');
 const maiorPontuacao = document.querySelector('.record-timer')
+const NomeInicio = document.querySelector('.divForm-input');
+const jogarForm = document.querySelector('#jogarBtnForm');
+const divForm = document.querySelector('.divForm');
+const desfoque = document.querySelector('.desfoque');
 
+let jogador
+let r = /^(?=.*[a-z])[a-z]{4,}/
+
+
+ $(NomeInicio).keypress(function() {
+    if (NomeInicio.value.match(r)) {
+        NomeInicio.classList.remove('error')
+        NomeInicio.classList.add('certo')
+        jogarForm.classList.remove('BtnDireita');
+        jogarForm.classList.remove('BtnEsquerda');
+        return;
+        
+        
+    }  else { erro();
+    }});
+    jogarForm.addEventListener('click', ()=>{
+        jogador = NomeInicio.value
+        alert(`Bom Jogo ${jogador}`);
+        console.log(jogador)
+        desfoque.style.display = 'none';
+        divForm.style.display = 'none'
+    })
+
+    function erro(){
+        NomeInicio.classList.remove('inicial');
+        NomeInicio.classList.add('error')
+          fugaDireita();
+    }
+
+function fugaDireita(){
+    jogarForm.addEventListener("mouseover", function(){
+        if($(NomeInicio).hasClass('error')){
+        jogarForm.classList.remove('BtnEsquerda')
+        jogarForm.classList.add('BtnDireita') 
+        fugaEsquerda();
+    } else{
+        jogarForm.classList.remove('BtnDireita');
+        jogarForm.classList.remove('BtnEsquerda');
+        return;
+    }})};
+    
+    function fugaEsquerda(){
+        jogarForm.addEventListener("mouseover", function(){
+            jogarForm.classList.remove('BtnDireita');
+            jogarForm.classList.add('BtnEsquerda')
+            fugaDireita();
+    })} 
+
+    
 
 
 let timer = 0;
@@ -97,19 +150,7 @@ startgame.addEventListener('click', function iniciar() {
     document.addEventListener('click', pulo);          //Funcionalidade do game
 
 
-        // parede.style.animation = 'block';
         
-        // itachi.style.animation = 'block';
-        
-        // nuvens.style.animation = 'block';
-        
-        // itachi.src = './img/itachi_running.gif';
-        
-        // clearInterval(loop);
-        
-        
-        // console.log(7)
-        // maiorPontuacao.textContent = record
     
     
     

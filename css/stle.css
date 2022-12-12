@@ -65,85 +65,17 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  flex-direction: column;
   position: absolute;
-  top: 40vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  width: 20%;
-  height: 40%;
-  background: linear-gradient(#791000, #791000, #020202);
-  border-radius: 7px;
+  margin: 200px;
+  width: 30%;
+  height: 50%;
 }
 .divForm-form {
   justify-content: center;
   align-items: center;
   display: flex;
-  width: 100%;
-  height: 100%;
   flex-direction: column;
-}
-.divForm-label {
-  color: #fff;
-  font-size: 1.2rem;
-  font-family: "sono";
-  margin-bottom: 10px;
-}
-.divForm-input {
-  width: 80%;
-  height: 25px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-.divForm-btn {
-  margin-top: 10px;
-  width: 60%;
-  height: 25px;
-  background-color: red;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-.divForm-corvo {
-  width: 100%;
-  height: 20vh;
-  margin-bottom: 10px;
-}
-
-.desfoque {
-  background-color: rgba(0, 0, 0, 0.8980392157);
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  z-index: 3;
-}
-
-.BtnDireita {
-  transform: translatex(100px);
-  width: 35%;
-}
-
-.BtnEsquerda {
-  transform: translatex(-100px);
-  width: 35%;
-}
-
-.inicial {
-  border: 2px solid;
-  outline: none;
-}
-
-.error {
-  border: 2px solid #f00;
-  outline: none;
-}
-
-.certo {
-  border: 2px solid rgb(94, 255, 0);
-  outline: none;
+  padding: 5px;
 }
 
 .pulo {
@@ -225,4 +157,4 @@
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=stle.css.map */
