@@ -70,12 +70,12 @@ let id = null;
 let pontuacao
 let recomecar = false
 
-do {
-    
-    startgame.addEventListener('click', ()=> {
-        startgame.style.display = 'none';
-        if(!id) {
-        id = setInterval(function () {
+
+// while (recomecar == false) { 
+       startgame.addEventListener('click', ()=> {
+           startgame.style.display = 'none';
+           if(!id) {
+               id = setInterval(function () {
             display.textContent = timer++;
             if(timer >= 80 && timer <90){
                 olhos.style.display = 'block'
@@ -103,7 +103,7 @@ do {
             }, 
             100);    
         } 
-
+        
         setInterval(() => {
             const paredePosition = parede.offsetLeft;
             const nuvensPosition = nuvens.offsetLeft;
@@ -132,20 +132,20 @@ do {
                 clearInterval(id);
                 olhos.style.display = 'block' ;
                 setTimeout(function(){
-                    startgame.innerHTML = "Ativar Izanagi"
-                    startgame.style.display = 'block'}, 2000)
-                   
+                    gameover.style.display = 'block'}, 2000)
+                    
                     
                     
                 } 
             }, 10);
         })
+    // }
         // recomecar = true
-        startgame.addEventListener('click', ()=>{
-            recomecar = false
-            console.log(recomecar)
-    })
-    } while (recomecar == true);
+    //     startgame.addEventListener('click', ()=>{
+    //         recomecar = false
+    //         console.log(recomecar)
+    // })
+    
     
     
 
